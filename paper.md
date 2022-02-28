@@ -30,9 +30,7 @@ bibliography: paper.bib
 
 River and Basin Profiler (`rabpro`) is a Python package to delineate watersheds, extract river flowlines and elevation profiles, and compute watershed statistics for any location on the Earth’s surface. As fundamental hydrologically-relevant units of surface area, watersheds are areas of land that drain via aboveground pathways to the same location. Delineations of watershed boundaries are typically performed on DEMs that represent surface elevations as gridded rasters. Depending on the resolution of the DEM and the size of the watershed, delineation may be very computationally expensive. With this in mind, we designed `rabpro` to provide user-friendly workflows to manage the complexity and computational expense of watershed calculations given an arbitrary coordinate pair. In addition to basic watershed delineation, `rabpro` will extract the elevation profile for a watershed’s main-channel flowline. This enables the computation of river slope, which is a critical parameter in many hydrologic and geomorphologic models. Finally, `rabpro` provides a user-friendly wrapper around Google Earth Engine’s (GEE) Python API to enable cloud-computing of zonal watershed statistics and/or time-varying forcing data from hundreds of available datasets. Altogether, `rabpro` provides the ability to automate or semi-automate complex watershed analysis workflows across broad spatial extents.
 
-```
-![blah](https://github.com/VeinsOfTheEarth/rabpro/blob/main/docs/paper_fig/figure_1.PNG?raw=true){width=20%}
-```
+![blah](./blob/main/docs/paper_fig/figure_1.PNG)
 
 ## Statement of Need
 
@@ -59,7 +57,7 @@ One unique `rabpro` innovation is its automation of “hydrologically addressing
 There are three primary operations supported by `rabpro`: 1) basin delineation, 2) elevation profiling, and 3) subbasin (zonal) statistics. If operating on a single coordinate pair, the cleanest workflow would be instantiating an object of the `profiler` class and calling (in order) the `delineate_basins()`, `elev_profile()`, and `basin_stats()` methods (See the [Basic Example](https://veinsoftheearth.github.io/rabpro/examples/notebooks/basic_example.html) notebook). If operating on multiple coordinate pairs, the workflow would loop through each coordinate pair while delineating each watershed (optionally calculating its elevation profile). As the loop runs, the user collects each basin polygon in a list, concatenates the list, and directly calls  `subbasin_stats.compute()` on the resulting GeoDataFrame (See the [Full Example](https://veinsoftheearth.github.io/rabpro/examples/notebooks/full_example.html) notebook). More details on package functionality can be found in [the documentation](https://VeinsOfTheEarth.github.io/rabpro/).
 
 
-![alt_text](images/image1.png "image_tooltip")
+![alt_text](./images/image1.png "image_tooltip")
 
 
 Figure 1: Example output from the [Full Example](https://veinsoftheearth.github.io/rabpro/examples/notebooks/full_example.html) notebook where dam-associated [@prior_vote-dams_2022] watersheds in Sri Lanka are delineated and zonal statistics are run for water occurrence, temperature, and precipitation.
